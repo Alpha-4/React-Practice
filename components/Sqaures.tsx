@@ -51,13 +51,19 @@ const Sqaures = ({data}: {data: number[][]}) => {
 
                     row.map((col: number, colIndex: number) => (
 
-                        col && <div className={colors.includes(rowIndex + "-" + colIndex) ? "w-20 h-20 col-span-1 bg-green-500" : "w-20 h-20 bg-black col-span-1"} key={rowIndex + "-" + colIndex} onClick={() => changeColor(rowIndex + "-" + colIndex)} ></div>
+                        col === 1 ?
+                            <div className={colors.includes(rowIndex + "-" + colIndex) ? "w-20 h-20 col-span-1 bg-green-500" : "w-20 h-20 bg-black col-span-1"}
+                                key={rowIndex + "-" + colIndex} onClick={() => changeColor(rowIndex + "-" + colIndex)} >
+                            </div>
+                            :
+                            <div className="w-20 h-20 col-span-1 border-none" key={rowIndex + "-" + colIndex} >
+                            </div>
                     )
                     )
                 )
                 )
             }
-        </div>
+        </div >
     )
 }
 
