@@ -6,6 +6,7 @@ const Sqaures = ({data}: {data: number[][]}) => {
     const [process, setProcess] = useState(false);
     const intervalRef = useRef<any>(null);
     const ones = useRef<number>(0);
+    const rows = data[0].length;
 
     const countOnes = () => {
         ones.current = 0;
@@ -44,7 +45,7 @@ const Sqaures = ({data}: {data: number[][]}) => {
 
 
     return (
-        <div className='w-120 h-120 grid grid-cols-3 gap-4' >
+        <div className={'w-120 h-120 grid gap-4 grid-cols-' + rows} >
             {
                 data.map((row: number[], rowIndex: number) =>
                 (
